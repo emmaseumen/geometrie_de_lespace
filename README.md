@@ -1,4 +1,4 @@
-# geometrie_de_lespace
+# Geometrie_de_lespace
 # Description du projet✨📰
 Les mathematiques, la logique spaciale nous pemet de comprendre les concepte de la geometrie 2D a travers les structures comme points et vecteurs. Mon projet nous montre comment modeliser des concepte mathematique.
 # Presentation du fichier et leurs localisations📰
@@ -27,7 +27,8 @@ Point2f Rotate(const Point2f& p, float angleDegree);//fonction pour calculer la 
 std::string ToString(const Point2f& p);//permet d afficher le resultat d un point
 
 #endif
-## Qui a ete implemente dans point.cpp
+```
+# Implementation dans point.cpp
 ## Localisation de point.cpp
 ### SRC/geometrie/point.cpp
 ```cpp
@@ -55,7 +56,8 @@ Point2f Rotate(const Point2f& p, float angleDegree){
 }
 std::string ToString(const Point2f& p){//permet d afficher le resultat
     return(tostring(p.x) + tostring(p.y));//permet de les afficher sous forme de textes comme (x,y)
-}    
+}
+```
 ## Localisation de vector.h
 ### SRC/geometrie/vector.h
 ```cpp
@@ -84,8 +86,10 @@ float Determinant(const Vector2f& a, const Vector2f& b);
 
 std::string ToString(const Vector2f& v);//permet d afficher le resultat sur les vecteurs
 #endif
-## Qui a ete implemente dans vector.cpp
+```
+# Implementation dans vector.cpp
 ## Localisation de vector.cpp
+### SRC/geometrie/vector.cpp
 ```cpp
 #ifndef VECTOR_H
 #define VECTOR_H
@@ -120,6 +124,7 @@ float Determinant(const Vector2f& a, const Vector2f& b){
 std::string ToString(const Vector2f& v){
     return(+ tostring (v.x) + ","+ tostring(v.y));//permet d afficher le resultats en texte comme (x,y)
 }
+```
 ## Localisation de utils.h
 ### SRC/geometrie/utils.h
 ```cpp
@@ -170,7 +175,7 @@ void Print(const T& first, const Args&... args) {
     ((std::cout << ", " << ToString(args)), ...);
     std::cout << std::endl;
 }
-
+```
 Et apres cela nous avon creer notre main.cpp ou l on va implemente tout notre programme
 
 # Fichier principale📰
@@ -263,7 +268,8 @@ int main() {
     
     return 0;
 }
-# Compilation et execution🎰
+```
+# compilation et execution🎰
 g++ src/main.cpp src/geometry/*.cpp -I src/geometry -o geometry
 # Prerequis acquis😎👾
 parmis les conceptes mathematiques nous avons:
