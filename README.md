@@ -5,6 +5,7 @@ Les mathematiques, la logique spaciale nous pemet de comprendre les concepte de 
  mon programme utilise des fonctions tel que point et vector pour cela nous avons cree des fichiers tel que:
  
  @@@@ point.h @@@@
+ 
  #ifndef POINT_H
 #define POINT_H
 
@@ -28,6 +29,7 @@ std::string ToString(const Point2f& p);
 #endif
 
 @@@@ vector.h @@@@
+
 #ifndef VECTOR_H
 #define VECTOR_H
 
@@ -53,6 +55,7 @@ float Determinant(const Vector2f& a, const Vector2f& b);
 std::string ToString(const Vector2f& v);
 
 @@@@ utils.h @@@@
+
 #ifndef UTILS_H
 #define UTILS_H
 
@@ -104,6 +107,7 @@ void Print(const T& first, const Args&... args) {
 Et apres cela nous avon creer notre main.cpp ou l on va implemente tout notre programme
 
 @@@@ main.cpp @@@@
+
 #include "geometry/point.h"
 #include "geometry/vector.h"
 #include "geometry/utils.h"
