@@ -72,17 +72,18 @@ struct Vector2f {
     float y;
 };
 
-Vector2f MakeV2f(float x, float y);
+Vector2f MakeV2f(float x, float y);//creer des vecteurs
 Vector2f MakeV2f(const Point2f& a, const Point2f& b);
 //fonction qui permet de faire des operations sur les vecteurs
-Vector2f Add(const Vector2f& a, const Vector2f& b);
-Vector2f Sub(const Vector2f& a, const Vector2f& b);
+Vector2f Add(const Vector2f& a, const Vector2f& b);//permet d additionner deux vecteurs
+Vector2f Sub(const Vector2f& a, const Vector2f& b);//permet de soustraires deux vecteurs
 Vector2f Scale(const Vector2f& v, float scalar);
-float Dot(const Vector2f& a, const Vector2f& b);
-float Length(const Vector2f& v);
-Vector2f Normalize(const Vector2f& v);
+float Dot(const Vector2f& a, const Vector2f& b);//effectue le produit scalaire
+float Length(const Vector2f& v);//pour determiner le determinant
+Vector2f Normalize(const Vector2f& v);//pour normaliser deux vecteurs
+//pour l interpolation lineaire de deux vecteurs
 Vector2f Lerp(const Vector2f& a, const Vector2f& b, float t);
-float Determinant(const Vector2f& a, const Vector2f& b);
+float Determinant(const Vector2f& a, const Vector2f& b);//pour determiner le determinant
 
 std::string ToString(const Vector2f& v);//permet d afficher le resultat sur les vecteurs
 #endif
