@@ -18,13 +18,13 @@ struct Point2f {
 };
 
 Point2f MakeP2f(float x, float y);
-Point2f Translate(const Point2f& p, float dx, float dy);
-Point2f Translate(const Point2f& p, const Vector2f& v);
-Point2f Scale(const Point2f& p, float sx, float sy);
-Point2f Scale(const Point2f& p, const Vector2f& s);
-Point2f Rotate(const Point2f& p, float angleDegree);
+Point2f Translate(const Point2f& p, float dx, float dy);//fonction qui permet de calculer les coordonnees d un point
+Point2f Translate(const Point2f& p, const Vector2f& v);//fonction qui permet de calculer la translation d un point par un vecteur
+Point2f Scale(const Point2f& p, float sx, float sy);//fonction qui permet de calculer l homothetie d un point
+Point2f Scale(const Point2f& p, const Vector2f& s);//fonction qui permet de calculer l homothetie d un point par un vecteur
+Point2f Rotate(const Point2f& p, float angleDegree);//fonction pour calculer la rotation d un point
 
-std::string ToString(const Point2f& p);
+std::string ToString(const Point2f& p);//permet d afficher le resultat d un point
 
 #endif
 ## qui a ete implemente dans point.cpp
@@ -72,6 +72,7 @@ struct Vector2f {
 
 Vector2f MakeV2f(float x, float y);
 Vector2f MakeV2f(const Point2f& a, const Point2f& b);
+//fonction qui permet de faire des operations sur les vecteurs
 Vector2f Add(const Vector2f& a, const Vector2f& b);
 Vector2f Sub(const Vector2f& a, const Vector2f& b);
 Vector2f Scale(const Vector2f& v, float scalar);
@@ -81,8 +82,8 @@ Vector2f Normalize(const Vector2f& v);
 Vector2f Lerp(const Vector2f& a, const Vector2f& b, float t);
 float Determinant(const Vector2f& a, const Vector2f& b);
 
-std::string ToString(const Vector2f& v);
-
+std::string ToString(const Vector2f& v);//permet d afficher le resultat sur les vecteurs
+#endif
 ## qui a ete implemente dans vector.cpp
 ## localisation de vector.cpp
 
