@@ -1,10 +1,10 @@
 # geometrie_de_lespace
 ## description du projet✨📰
 Les mathematiques, la logique spaciale nous pemet de comprendre les concepte de la geometrie 2D a travers les structures comme points et vecteurs. Mon projet nous montre comment modeliser des concepte mathematique.
-## fonctionnalite🎆🎬
+## presentation du fichier et leurs localisations📰
  mon programme utilise des fonctions tel que point et vector pour cela nous avons cree des fichiers tel que:
- 
- @@@@ point.h @@@@
+## localisation de point.h
+SRC/geometrie/point.h
  
  #ifndef POINT_H
 #define POINT_H
@@ -27,8 +27,37 @@ Point2f Rotate(const Point2f& p, float angleDegree);
 std::string ToString(const Point2f& p);
 
 #endif
+## qui a ete implemente dans point.cpp
+## localisation de point.cpp
+SRC/geometrie/point.cpp
 
-@@@@ vector.h @@@@
+#ifndef POINT_H
+#define POINT_H
+
+Point2f MakeP2f(float x, float y){
+    return x,y;//retourne les coordonnees x et y d un point
+}
+Point2f Translate(const Point2f& p, float dx, float dy){
+    return Point2f(p.x + dx, p.y + dy);// permet de retournerles coordonnees d un point de type point2f
+}
+Point2f Translate(const Point2f& p, const Vector2f& v){
+    return point2f(p.x + v.x, p.y + v.y);//permet de retourner les coordonnees du vecteur
+}
+Point2f Scale(const Point2f& p, float sx, float sy){
+    return Point2f(p.x * sx, p.y * sy);//permet de multiplier les coordonnees du point par un facteur d echelle
+}
+Point2f Scale(const Point2f& p, const Vector2f& s){
+    return point2f(p.x * s.x, p.y * sy);// permet de multiplier les coordonnees d un vecteur par un facteur d echelle
+}
+Point2f Rotate(const Point2f& p, float angleDegree){
+    float rad = angleDegree * M_pi/180.0;//permet de convertir l angle de rotation en radian
+    return point2f(p.x * cos(rad)-p.y * sin(rad), p.x * sin(rad)-p.y * cos(rad));//permet de calculer les coordonnees de la rotation connaissant son origine
+}
+std::string ToString(const Point2f& p){//permet d afficher le resultat
+    return(tostring(p.x) + tostring(p.y));//permet de les afficher sous forme de textes comme (x,y)
+}    
+## localisation de vector.h
+SRC/geometrie/vector.h
 
 #ifndef VECTOR_H
 #define VECTOR_H
@@ -54,7 +83,44 @@ float Determinant(const Vector2f& a, const Vector2f& b);
 
 std::string ToString(const Vector2f& v);
 
-@@@@ utils.h @@@@
+## qui a ete implemente dans vector.cpp
+## localisation de vector.cpp
+
+#ifndef VECTOR_H
+#define VECTOR_H
+
+Vector2f MakeV2f(float x, float y){
+    return x,y;
+}
+Vector2f MakeV2f(const Point2f& a, const Point2f& b){
+    return vec2f(b.x-a.x, b.y-a.y);//permet de donner les composantes du vecteur
+}
+Vector2f Add(const Vector2f& a, const Vector2f& b){
+    return (a.x + b.x, a.y + b.y);//permet d additionner les cordonnees de deux vecteurs
+}
+Vector2f Sub(const Vector2f& a, const Vector2f& b){
+    return (a.x - b.x, a.y - b.y);//permet de soustraire les coordonnees de deux vecteurs
+}
+Vector2f Scale(const Vector2f& v, float scalar){
+    return (v.x * scalar, v.y * scalar);//permet de multiplier un vecteur par un scalaire en changeant ca longueur
+}
+float Dot(const Vector2f& a, const Vector2f& b){
+    return (a.x * b.x + a.y * b.y);//permet de calculer le produit scalaire
+}
+float Length(const Vector2f& v){
+    return sqrt(v.x * v.y + v.x * v.y);//permet de calculer la norme d un vecteur
+}
+Vector2f Lerp(const Vector2f& a, const Vector2f& b, float t){
+    return vec2f(a.x + t * (b.x - a.x), a.y + t * (b.y - a.y));//permet de faire l interpolation lineaire entre deux vecteurs a et b
+}
+float Determinant(const Vector2f& a, const Vector2f& b){
+    return (a.x * b.x - a.y * b.y);//permet de calculer le determinant de deux vecteurs 
+}
+std::string ToString(const Vector2f& v){
+    return(+ tostring (v.x) + ","+ tostring(v.y));//permet d afficher le resultats en texte comme (x,y)
+}
+## localisation de utils.h
+SRC/geometrie/utils.h
 
 #ifndef UTILS_H
 #define UTILS_H
@@ -106,7 +172,9 @@ void Print(const T& first, const Args&... args) {
 
 Et apres cela nous avon creer notre main.cpp ou l on va implemente tout notre programme
 
-@@@@ main.cpp @@@@
+## fichier principale📰
+## localisation de main.cpp
+SRC/main.cpp
 
 #include "geometry/point.h"
 #include "geometry/vector.h"
