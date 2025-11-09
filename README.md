@@ -1,11 +1,11 @@
 # geometrie_de_lespace
-## description du projet✨📰
+# Description du projet✨📰
 Les mathematiques, la logique spaciale nous pemet de comprendre les concepte de la geometrie 2D a travers les structures comme points et vecteurs. Mon projet nous montre comment modeliser des concepte mathematique.
-## presentation du fichier et leurs localisations📰
+# Presentation du fichier et leurs localisations📰
  mon programme utilise des fonctions tel que point et vector pour cela nous avons cree des fichiers tel que:
-## localisation de point.h
-SRC/geometrie/point.h
- 
+## Localisation de point.h
+### SRC/geometrie/point.h
+```cpp
  #ifndef POINT_H
 #define POINT_H
 
@@ -27,10 +27,10 @@ Point2f Rotate(const Point2f& p, float angleDegree);//fonction pour calculer la 
 std::string ToString(const Point2f& p);//permet d afficher le resultat d un point
 
 #endif
-## qui a ete implemente dans point.cpp
-## localisation de point.cpp
-SRC/geometrie/point.cpp
-
+## Qui a ete implemente dans point.cpp
+## Localisation de point.cpp
+### SRC/geometrie/point.cpp
+```cpp
 #ifndef POINT_H
 #define POINT_H
 
@@ -56,9 +56,9 @@ Point2f Rotate(const Point2f& p, float angleDegree){
 std::string ToString(const Point2f& p){//permet d afficher le resultat
     return(tostring(p.x) + tostring(p.y));//permet de les afficher sous forme de textes comme (x,y)
 }    
-## localisation de vector.h
-SRC/geometrie/vector.h
-
+## Localisation de vector.h
+### SRC/geometrie/vector.h
+```cpp
 #ifndef VECTOR_H
 #define VECTOR_H
 
@@ -84,9 +84,9 @@ float Determinant(const Vector2f& a, const Vector2f& b);
 
 std::string ToString(const Vector2f& v);//permet d afficher le resultat sur les vecteurs
 #endif
-## qui a ete implemente dans vector.cpp
-## localisation de vector.cpp
-
+## Qui a ete implemente dans vector.cpp
+## Localisation de vector.cpp
+```cpp
 #ifndef VECTOR_H
 #define VECTOR_H
 
@@ -120,9 +120,9 @@ float Determinant(const Vector2f& a, const Vector2f& b){
 std::string ToString(const Vector2f& v){
     return(+ tostring (v.x) + ","+ tostring(v.y));//permet d afficher le resultats en texte comme (x,y)
 }
-## localisation de utils.h
-SRC/geometrie/utils.h
-
+## Localisation de utils.h
+### SRC/geometrie/utils.h
+```cpp
 #ifndef UTILS_H
 #define UTILS_H
 
@@ -173,10 +173,10 @@ void Print(const T& first, const Args&... args) {
 
 Et apres cela nous avon creer notre main.cpp ou l on va implemente tout notre programme
 
-## fichier principale📰
-## localisation de main.cpp
-SRC/main.cpp
-
+# Fichier principale📰
+## Localisation de main.cpp
+### SRC/main.cpp
+```cpp
 #include "geometry/point.h"
 #include "geometry/vector.h"
 #include "geometry/utils.h"
@@ -263,14 +263,14 @@ int main() {
     
     return 0;
 }
-## compilation et execution🎰
+# Compilation et execution🎰
 g++ src/main.cpp src/geometry/*.cpp -I src/geometry -o geometry
-## prerequis acquis😎👾
+# Prerequis acquis😎👾
 parmis les conceptes mathematiques nous avons:
 ~ les transformations vectoriels(translation,la rotation,l homothetie)
 ~ les calculs vectoriels
 ~ le lerp ou interpolation lineaire
-## devoppement personnel👌🎗️
+# Devoppement personnel👌🎗️
 En realisant ce projet l etudiant obtient des competences tel que:
 ~ la programmation modulaire
 ~ implemente certaine fonctions mathematique
